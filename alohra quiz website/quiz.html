@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Questions - ALOHRA GENKWIZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add some basic styles for the quiz */
+        .quiz-section {
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .quiz-question {
+            margin-bottom: 15px;
+        }
+        .quiz-question label {
+            display: block;
+            font-weight: bold;
+        }
+        .quiz-question input {
+            margin-right: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html#home" style="display: flex; align-items: center;">
+                    <img src="WhatsApp_Image_2024-08-22_at_21.37.25-removebg-preview.png" alt="ALOHRA GENKWIZ Logo" style="margin-right: 10px;">
+                    <span style="font-size: 24px; color: #fff; font-weight: bold;">ALOHRA GENKWIZ</span>
+                </a>
+            </div>
+            <ul>
+                <!-- <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <button id="loginBtn" class="login-btn">Login</button>
+                <button id="donationBtn" class="donation-btn">Donation</button> -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="quiz" class="quiz-section">
+        <h2>Quiz Questions</h2>
+        <form id="quizForm">
+            <!-- Quiz questions will be inserted here by JavaScript -->
+        </form>
+        <button type="button" onclick="submitQuiz()">Submit Answers</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ALOHRA GENKWIZ. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const quizData = [
+            // Global Environmental Movements
+            // The Conservation Movement
+            { question: 'Q1. When did the Conservation Movement primarily take place?', options: ['18th century', 'Late 19th - Early 20th century', 'Mid-20th century', 'Late 20th century'], answer: 'Late 19th - Early 20th century' },
+            { question: 'Q2. Which of the following was a key figure in the Conservation Movement?', options: ['John Muir', 'Rachel Carson', 'Greta Thunberg', 'Medha Patkar'], answer: 'John Muir' },
+            { question: 'Q3. What was a significant outcome of the Conservation Movement in the United States?', options: ['Ban on plastic bags', 'Creation of national parks', 'Introduction of renewable energy', 'Passage of the Clean Air Act'], answer: 'Creation of national parks' },
+            { question: 'Q4. Which U.S. President was closely associated with the Conservation Movement?', options: ['Franklin D. Roosevelt', 'Abraham Lincoln', 'Theodore Roosevelt', 'George Washington'], answer: 'Theodore Roosevelt' },
+            { question: 'Q5. The Conservation Movement emphasized the sustainable use of what?', options: ['Water resources', 'Forests and wildlife', 'Fossil fuels', 'Marine ecosystems'], answer: 'Forests and wildlife' },
+
+            // The Environmental Movement
+            { question: 'Q6. Which book by Rachel Carson helped spark the modern Environmental Movement?', options: ['The Silent Spring', 'The Population Bomb', 'Walden', 'Our Common Future'], answer: 'The Silent Spring' },
+            { question: 'Q7. When was the first Earth Day celebrated?', options: ['1965', '1970', '1975', '1980'], answer: '1970' },
+            { question: 'Q8. What was the primary focus of the Environmental Movement in the 1960s and 1970s?', options: ['Climate change', 'Pollution control', 'Nuclear disarmament', 'Global warming'], answer: 'Pollution control' },
+            { question: 'Q9. Which government agency was created in response to the Environmental Movement in the United States?', options: ['Federal Bureau of Investigation (FBI)', 'Environmental Protection Agency (EPA)', 'National Aeronautics and Space Administration (NASA)', 'Food and Drug Administration (FDA)'], answer: 'Environmental Protection Agency (EPA)' },
+            { question: 'Q10. Which environmental law was passed as a result of the Environmental Movement?', options: ['Clean Air Act', 'Civil Rights Act', 'National Labor Relations Act', 'Social Security Act'], answer: 'Clean Air Act' },
+
+            // The Anti-Nuclear Movement
+            { question: 'Q11. The Anti-Nuclear Movement gained momentum after which event?', options: ['Hiroshima bombing', 'Three Mile Island accident', 'Chernobyl disaster', 'Fukushima disaster'], answer: 'Three Mile Island accident' },
+            { question: 'Q12. What was the main concern of the Anti-Nuclear Movement?', options: ['Climate change', 'Safety of nuclear power plants', 'Deforestation', 'Air pollution'], answer: 'Safety of nuclear power plants' },
+            { question: 'Q13. Which country saw significant protests against nuclear power during the 1970s and 1980s?', options: ['Japan', 'United States', 'Germany', 'India'], answer: 'Germany' },
+            { question: 'Q14. The Anti-Nuclear Movement led to a shift towards which type of energy?', options: ['Fossil fuels', 'Solar and wind energy', 'Hydropower', 'Geothermal energy'], answer: 'Solar and wind energy' },
+            { question: 'Q15. Which disaster in 1986 highlighted the dangers of nuclear energy?', options: ['Bhopal gas tragedy', 'Deepwater Horizon oil spill', 'Chernobyl disaster', 'Exxon Valdez oil spill'], answer: 'Chernobyl disaster' },
+
+            // The Green Movement
+            { question: 'Q16. Which organization is most closely associated with the Green Movement?', options: ['Greenpeace', 'World Wildlife Fund (WWF)', 'Sierra Club', 'Amnesty International'], answer: 'Greenpeace' },
+            { question: 'Q17. What is a key focus of the Green Movement?', options: ['Deforestation', 'Climate change', 'Animal rights', 'Labor rights'], answer: 'Climate change' },
+            { question: 'Q18. The Green Movement has significantly influenced which international agreement?', options: ['Kyoto Protocol', 'Paris Agreement', 'Montreal Protocol', 'Geneva Convention'], answer: 'Paris Agreement' },
+            { question: 'Q19. Which young activist became a global symbol for the Green Movement in recent years?', options: ['Malala Yousafzai', 'Greta Thunberg', 'Vandana Shiva', 'Rachel Carson'], answer: 'Greta Thunberg' },
+            { question: 'Q20. The Green Movement advocates for which of the following?', options: ['Fossil fuel expansion', 'Renewable energy', 'Nuclear power', 'Industrial agriculture'], answer: 'Renewable energy' },
+
+            // The Climate Justice Movement
+            { question: 'Q21. The Climate Justice Movement focuses on the impacts of climate change on which groups?', options: ['Wealthy nations', 'Marginalized communities', 'Industrial workers', 'Politicians'], answer: 'Marginalized communities' },
+            { question: 'Q22. Which of the following is a key demand of the Climate Justice Movement?', options: ['Lower taxes for corporations', 'Climate policies that are fair to all', 'More nuclear power plants', 'Expansion of oil drilling'], answer: 'Climate policies that are fair to all' },
+            { question: 'Q23. Which international event is often a focal point for the Climate Justice Movement?', options: ['World Economic Forum', 'United Nations Climate Change Conference (COP)', 'G7 Summit', 'Olympic Games'], answer: 'United Nations Climate Change Conference (COP)' },
+            { question: 'Q24. What role do youth activists play in the Climate Justice Movement?', options: ['Advocating for business interests', 'Leading global climate strikes', 'Promoting fossil fuel use', 'Opposing renewable energy'], answer: 'Leading global climate strikes' },
+            { question: 'Q25. Which of the following is NOT a focus of the Climate Justice Movement?', options: ['Environmental racism', 'Renewable energy', 'Displacement of communities', 'Promotion of coal mining'], answer: 'Promotion of coal mining' },
+
+            // Indian Environmental Movements
+            // Chipko Movement
+            { question: 'Q26. Who was a leading figure in the Chipko Movement?', options: ['Sunderlal Bahuguna', 'Medha Patkar', 'Vandana Shiva', 'Baba Amte'], answer: 'Sunderlal Bahuguna' },
+            { question: 'Q27. In which year did the Chipko Movement begin?', options: ['1960', '1973', '1980', '1990'], answer: '1973' },
+            { question: 'Q28. What was the primary goal of the Chipko Movement?', options: ['Water conservation', 'Forest conservation', 'Clean air', 'Energy efficiency'], answer: 'Forest conservation' },
+            { question: 'Q29. Which region of India is most closely associated with the Chipko Movement?', options: ['Himalayas', 'Desert', 'Coastal', 'Plains'], answer: 'Himalayas' },
+            { question: 'Q30. What does "Chipko" mean in the Chipko Movement?', options: ['Hug', 'Fight', 'Protect', 'Defend'], answer: 'Hug' },
+
+            // Silent Valley Movement
+            { question: 'Q31. The Silent Valley Movement aimed to protect which area?', options: ['Silent Valley National Park', 'Sundarbans', 'Western Ghats', 'Ranthambore National Park'], answer: 'Silent Valley National Park' },
+            { question: 'Q32. Which river flows through the Silent Valley National Park?', options: ['Ganges', 'Yamuna', 'Kuntipuzha', 'Brahmaputra'], answer: 'Kuntipuzha' },
+            { question: 'Q33. What was the main threat to the Silent Valley National Park?', options: ['Deforestation for agriculture', 'Mining', 'Construction of a hydroelectric dam', 'Urbanization'], answer: 'Construction of a hydroelectric dam' },
+            { question: 'Q34. Which organization was instrumental in the success of the Silent Valley Movement?', options: ['Greenpeace', 'Sierra Club', 'Chipko', 'Sasthra Sahithya Parishad'], answer: 'Sasthra Sahithya Parishad' },
+            { question: 'Q35. The Silent Valley Movement was successful in protecting which of the following ecosystems?', options: ['Mangroves', 'Desert', 'Tropical rainforest', 'Coral reefs'], answer: 'Tropical rainforest' },
+
+            // Narmada Bachao Andolan (NBA)
+            { question: 'Q36. When did the Narmada Bachao Andolan begin?', options: ['1960', '1975', '1985', '1995'], answer: '1985' },
+            { question: 'Q37. Which river is associated with the Narmada Bachao Andolan?', options: ['Ganges', 'Yamuna', 'Godavari', 'Narmada'], answer: 'Narmada' },
+            { question: 'Q38. Who is the leading figure of the Narmada Bachao Andolan?', options: ['Medha Patkar', 'Sunderlal Bahuguna', 'Vandana Shiva', 'Baba Amte'], answer: 'Medha Patkar' },
+            { question: 'Q39. What was the main concern of the Narmada Bachao Andolan?', options: ['Deforestation', 'Water pollution', 'Displacement due to dam construction', 'Climate change'], answer: 'Displacement due to dam construction' },
+            { question: 'Q40. Which major dam was a focal point of the Narmada Bachao Andolan?', options: ['Bhakra Nangal Dam', 'Sardar Sarovar Dam', 'Hirakud Dam', 'Tehri Dam'], answer: 'Sardar Sarovar Dam' }
+        ];
+
+        function loadQuiz() {
+            const quizForm = document.getElementById('quizForm');
+            quizData.forEach((item, index) => {
+                const questionElement = document.createElement('div');
+                questionElement.classList.add('quiz-question');
+                questionElement.innerHTML = `
+                    <label>${item.question}</label>
+                    ${item.options.map(option => `
+                        <label>
+                            <input type="radio" name="question${index}" value="${option}">
+                            ${option}
+                        </label>
+                    `).join('<br>')}
+                `;
+                quizForm.appendChild(questionElement);
+            });
+        }
+
+        function submitQuiz() {
+            const formData = new FormData(document.getElementById('quizForm'));
+            let score = 0;
+            let totalQuestions = quizData.length;
+            let incorrectQuestions = [];
+
+            quizData.forEach((item, index) => {
+                const answer = formData.get(`question${index}`);
+                if (answer === item.answer) {
+                    score++;
+                } else {
+                    incorrectQuestions.push(item.question);
+                }
+            });
+
+            // Store results in localStorage
+            localStorage.setItem('quizScore', score);
+            localStorage.setItem('totalQuestions', totalQuestions);
+            localStorage.setItem('incorrectQuestions', JSON.stringify(incorrectQuestions));
+
+            // Redirect to results page
+            window.location.href = 'results.html';
+        }
+
+        window.onload = loadQuiz;
+    </script>
+</body>
+</html>

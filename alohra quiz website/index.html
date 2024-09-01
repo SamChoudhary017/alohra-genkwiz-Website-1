@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALOHRA GENKWIZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      /* About section carousel styling */
+      .about-carousel {
+          position: relative;
+          width: 100%;
+          max-width: 1000px; /* Set a max-width for the carousel */
+          margin: 0 auto;
+          overflow: hidden;
+          border-radius: 10px;
+      }
+      .carousel-images {
+          display: flex;
+          transition: transform 3s ease; /* Adjust transition timing */
+          width: 80%; /* Ensure full width for the carousel container */
+      }
+      .carousel-images img {
+          width: 100%; /* Each image takes full width of the container */
+          height: auto;
+          object-fit: cover; /* Maintain aspect ratio and cover the container */
+          border-radius: 10px;
+      }
+      button.prev, button.next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+          font-size: 24px;
+          border-radius: 50%;
+      }
+      button.prev {
+          left: 10px;
+      }
+      button.next {
+          right: 10px;
+      }
+      button.prev:hover, button.next:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#home" style="display: flex; align-items: center;">
+                    <img src="WhatsApp_Image_2024-08-22_at_21.37.25-removebg-preview.png" alt="ALOHRA GENKWIZ Logo" style="margin-right: 10px; animation: none;">
+                    <span style="font-size: 24px; color: #fff; font-weight: bold;">ALOHRA GENKWIZ</span>
+                </a>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <button id="loginBtn" class="login-btn">Login</button>
+                <button id="donationBtn" class="donation-btn">Donation</button>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login Popup -->
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <h2>Login</h2>
+            <form action="#">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+                <br>
+            </form>
+            <p>Don't have an account? <a href="https://accounts.google.com/lifecycle/steps/signup/name?ddm=0&dsh=S-1574620642:1725163439762814&flowEntry=SignUp&flowName=GlifWebSignIn&TL=AKeb6mwW8qMUVqVkpGa9IkcZCwRc_YArEG_oZAqjBgcWviP3Fim1ci6Q1-8QIj-R" class="create-account-link" target="_blank">Create one here</a>.</p>
+        </div>
+    </div>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Protect Our Planet</h1>
+            <p>Join us in making a difference. Every action counts.</p>
+            <a href="learn-more.html" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We are committed to raising awareness about environmental issues and promoting sustainable practices.</p>
+        <div class="about-carousel">
+            <div class="carousel-images">
+                <img src="1.jpg" alt="Image 1">
+                <img src="2.jpg" alt="Image 2">
+                <img src="3.jpg" alt="Image 3">
+                <img src="4.4.jpg" alt="Image 4">
+                <img src="4.jpg" alt="Image 5">
+                <img src="5.jpg" alt="Image 6">
+                <!-- Repeat images for seamless loop -->
+                <img src="1.jpg" alt="Image 1">
+                <img src="2.jpg" alt="Image 2">
+                <img src="3.jpg" alt="Image 3">
+                <img src="4.4.jpg" alt="Image 4">
+                <img src="4.jpg" alt="Image 5">
+                <img src="5.jpg" alt="Image 6">
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </section>
+
+    <br>
+
+    <section id="events" class="events-section">
+        <h2>Upcoming Events</h2>
+        <p>Participate in our global events to support environmental causes.</p>
+        <ul class="events-list">
+            <li><strong>World Water Day</strong> - March 22, 2024</li>
+            <li><strong>Earth Hour</strong> - March 30, 2024</li>
+            <li><strong>Earth Day Cleanup</strong> - April 22, 2024</li>
+            <li><strong>Arbor Day</strong> - April 26, 2024</li>
+            <li><strong>Tree Planting Drive</strong> - June 5, 2024</li>
+            <li><strong>World Oceans Day</strong> - June 8, 2024</li>
+            <li><strong>Beach Conservation Workshop</strong> - August 15, 2024</li>
+            <li><strong>International Coastal Cleanup Day</strong> - September 21, 2024</li>
+            <li><strong>Zero Emissions Day</strong> - September 21, 2024</li>
+            <li><strong>World Cleanup Day</strong> - September 21, 2024</li>
+            <li><strong>International Day of Climate Action</strong> - October 24, 2024</li>
+        </ul>
+    </section>
+
+    <br>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to get involved? Reach out to us!</p>
+        <form action="contact.php" method="POST" class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 ALOHRA GENKWIZ. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#"><img src="facebook-removebg-preview.jpg" alt="Facebook"></a>
+            <a href="#"><img src="twitter-removebg-preview.jpg" alt="Twitter"></a>
+            <a href="#"><img src="instagram-removebg-preview.jpg" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // JavaScript for carousel functionality
+      document.addEventListener('DOMContentLoaded', function () {
+          const prevButton = document.querySelector('.prev');
+          const nextButton = document.querySelector('.next');
+          const carouselImages = document.querySelector('.carousel-images');
+          const images = carouselImages.querySelectorAll('img');
+          const totalImages = images.length;
+          let index = 0;
+
+          // Clone the image set to create a smooth loop
+          const clonedImages = carouselImages.innerHTML;
+          carouselImages.innerHTML += clonedImages;
+          const totalClonedImages = images.length;
+
+          function updateCarousel() {
+              const offset = -index * 100;
+              carouselImages.style.transform = `translateX(${offset}%)`;
+              
+              // Reset index when reaching the end of the cloned images
+              if (index >= totalClonedImages) {
+                  index = 0;
+                  setTimeout(() => {
+                      carouselImages.style.transition = 'none'; // Disable transition to reset position
+                      carouselImages.style.transform = `translateX(0%)`;
+                      setTimeout(() => {
+                          carouselImages.style.transition = 'transform 3s ease'; // Re-enable transition
+                      }, 50);
+                  }, 3000); // Wait for the transition to complete
+              }
+          }
+
+          prevButton.addEventListener('click', () => {
+              index = (index > 0) ? index - 1 : totalClonedImages - 1;
+              updateCarousel();
+          });
+
+          nextButton.addEventListener('click', () => {
+              index = (index < totalClonedImages - 1) ? index + 1 : totalClonedImages;
+              updateCarousel();
+          });
+
+          // Auto-slide
+          setInterval(() => {
+              index = (index < totalClonedImages - 1) ? index + 1 : 0;
+              updateCarousel();
+          }, 3000); // Slide every 3 seconds
+      });
+    </script>
+</body>
+</html>

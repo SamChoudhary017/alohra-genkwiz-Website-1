@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More - ALOHRA GENKWIZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling for the card grid */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin-top: 15px;
+            font-size: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .card p {
+            font-size: 16px;
+            margin: 10px 0;
+            position: relative;
+            z-index: 2;
+        }
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        .card a:hover {
+            background-color: #45a049;
+        }
+        /* Layered effect */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+            border-radius: 10px;
+        }
+        /* Button styling */
+        .start-test-btn {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 20px auto;
+            padding: 15px 30px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .start-test-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#home" style="display: flex; align-items: center;">
+                    <img src="WhatsApp_Image_2024-08-22_at_21.37.25-removebg-preview.png" alt="ALOHRA GENKWIZ Logo" style="margin-right: 10px; animation: none;">
+                    <span style="font-size: 24px; color: #fff; font-weight: bold;">ALOHRA GENKWIZ</span>
+                </a>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <button id="loginBtn" class="login-btn">Login</button>
+                <button id="donationBtn" class="donation-btn">Donation</button>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="card-container">
+        <!-- Row 1 -->
+        <div class="card">
+            <img src="chipko movement.jpeg" alt="Topic 1">
+            <h3>Chipko Movement (1973)</h3>
+            <p>Learn more about Topic 1.</p>
+            <a href="chipko-movement.html" target="_blank">Explore</a>
+        </div>
+        <div class="card">
+            <img src="Silent Valley Movement.jpg" alt="Topic 2">
+            <h3>Silent Valley Movement (1978)</h3>
+            <p>Learn more about Topic 2.</p>
+            <a href="silent-valley-movement.html" target="_blank">Explore</a>
+        </div>
+        <div class="card">
+            <img src="Narmada Bachao Andolan .webp" alt="Topic 3">
+            <h3>Narmada Bachao Andolan (1985)</h3>
+            <p>Learn more about Topic 3.</p>
+            <a href="narmada-bachao-andolan.html" target="_blank">Explore</a>
+        </div>
+        <!-- Row 2 -->
+        <div class="card">
+            <img src="Appiko Movement .jpg" alt="Topic 4">
+            <h3>Appiko Movement (1983)</h3>
+            <p>Learn more about Topic 4.</p>
+            <a href="appiko-movement.html" target="_blank">Explore</a>
+        </div>
+        <div class="card">
+            <img src="Save the Western Ghats Movement.jpg" alt="Topic 5">
+            <h3>Save the Western Ghats Movement (1987)</h3>
+            <p>Learn more about Topic 5.</p>
+            <a href="save-western-ghats-movement.html" target="_blank">Explore</a>
+        </div>
+        <div class="card">
+            <img src="navdanya movement.jpg" alt="Topic 6">
+            <h3>Navdanya Movement (1991)</h3>
+            <p>Learn more about Topic 6.</p>
+            <a href="navdanya-movement.html" target="_blank">Explore</a>
+        </div>
+        <!-- Row 3 -->
+        <div class="card">
+            <img src="National Green Tribunal Movement.jpg" alt="Topic 7">
+            <h3>National Green Tribunal Movement (2010)</h3>
+            <p>Learn more about Topic 7.</p>
+            <a href="national-green-tribunal-movement.html" target="_blank">Explore</a>
+        </div>
+        <div class="card">
+            <img src="The Conservation Movement.jpg" alt="Topic 8">
+            <h3>The Conservation Movement (Late 19th - Early 20th Century)</h3>
+            <p>Learn more about Topic 8.</p>
+            <a href="the-conservation-movement.html" target="_blank">Explore</a>
+        </div>
+        <div class="card">
+            <img src="The Environmental Movement (1960s).jpeg" alt="Topic 9">
+            <h3>The Environmental Movement (1960s)</h3>
+            <p>Learn more about Topic 9.</p>
+            <a href="the-environmental-movement.html" target="_blank">Explore</a>
+        </div>
+        <!-- Row 4 -->
+        <div class="card">
+            <img src="The Anti-Nuclear Movement .jpeg" alt="Topic 10">
+            <h3>The Anti-Nuclear Movement (1970)</h3>
+            <p>Learn more about Topic 10.</p>
+            <a href="the-anti-nuclear-movement.html" target="_blank">Explore</a>
+        </div>
+        <div class="card">
+            <img src="The Green Movement (1980).jpeg" alt="Topic 11">
+            <h3>The Green Movement (1980)</h3>
+            <p>Learn more about Topic 11.</p>
+            <a href="the-green-movement.html" target="_blank">Explore</a>
+        </div>
+        <div class="card">
+            <img src="The Climate Justice Movement (2000).jpeg" alt="Topic 12">
+            <h3>The Climate Justice Movement (2000)</h3>
+            <p>Learn more about Topic 12.</p>
+            <a href="the-climate-justice-movement.html" target="_blank">Explore</a>
+        </div>
+    </section>
+
+    <!-- Start Test Button -->
+    <a href="quiz.html" class="start-test-btn">Check Your Knowledge - Start Test</a>
+
+    <footer>
+        <p>&copy; 2024 ALOHRA GENKWIZ. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
